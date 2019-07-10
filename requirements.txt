@@ -1,0 +1,5 @@
+python3 -m venv tfFirst
+source tfFirst/bin/activate
+pip3 install tensorflow==2.0.0-beta1
+pip3 install keras
+pip3 install jupyter
