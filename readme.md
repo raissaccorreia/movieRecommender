@@ -1,19 +1,15 @@
 # Movie Recommender
 
-## Content-Based Filtering
+## Files Index
 
-## Collaborative Filtering
+### In the main folder we have a lot of python scripts:
 
-### Formas de Análise de Correlação
+- rating_normalizer: responsible for normalize the ratings from 0.5-5 to 0.1-1
 
-#### Similaridade de cossenos
+- crop_tags: in the genome_tags.csv we get only the tags above a certain level of relevance to describe a movie
 
-#### Distancia euclidiana
+- join_tag_tagid: creates a single csv with the tag and its respective label and its associated movies
 
-#### Correlação de Pearson
+- evaluations: list of evalution methods(RMSE, MAE, F1, RANKING DISTANCE and LONG TAIL PLOT)
 
-#### Mean Squared Difference
-
-## Fatoração Matricial
-
-### SVD
+- correlations: list of correlation methods(cosine similarity, soft cosine similarity, MSE and Euclidean Distance)
