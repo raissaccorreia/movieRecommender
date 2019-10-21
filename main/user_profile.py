@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from tqdm import tqdm
 
 # * linha,trash,movieId,tagId,relevance,label
 # movie_profile = pd.read_csv("../ML_Dataset/ml-latest/genome-tags.csv")
@@ -35,7 +36,7 @@ genre_dict = {
 num_movies = 193610
 genre_movie_matrix = np.zeros(shape=(num_movies, len(genre_dict)), dtype=int)
 
-for i in range(movie_genres.iloc[:, 2].values.size):
+for i in tqdm(range(movie_genres.iloc[:, 2].values.size)):
     genre_list = movie_genres.iloc[i, 2]
     genre_array = genre_list.split("|")
     for j in range(len(genre_array)):
@@ -43,14 +44,13 @@ for i in range(movie_genres.iloc[:, 2].values.size):
         genre_movie_matrix[movie_genres.iloc[i, 0], index_y] = 1
 
 genre_movie_df = pd.DataFrame(genre_movie_matrix)
-
 user_profiles = pd.DataFrame(columns=genre_dict, dtype=float)
 
 num_ratings_user = 0
 first_user = False
 last_user = False
 
-for i in range(ratings.iloc[:, 0].values.size):
+for i in tqdm(range(ratings.iloc[:, 0].values.size)):
     # actual,previous, next, first and last to make the decisions
     if i == 0:
         first_user = True
@@ -72,6 +72,7 @@ for i in range(ratings.iloc[:, 0].values.size):
         if user_id > prev_user:
             relation_gender_user = np.zeros(len(genre_dict), dtype=float)
             num_ratings_user = 0
+            break
     # the same user
     movie_id = ratings.iloc[i, 1]
     relation_gender_user += genre_movie_df.loc[movie_id] * ratings.iloc[i, 2]
@@ -80,9 +81,8 @@ for i in range(ratings.iloc[:, 0].values.size):
     if user_id < next_user:
         relation_gender_user = relation_gender_user * 1 / (num_ratings_user)
         user_profiles = pd.concat(
-            [user_profiles, relation_gender_user], ignore_index=True
+            [relation_gender_user, user_profiles], axis=0, ignore_index=False
         )
-        print("concatenei: " + str(user_id))
     # to end the loop
     first_user = False
     last_user = False
