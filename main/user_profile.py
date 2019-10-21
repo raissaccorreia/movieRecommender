@@ -72,21 +72,21 @@ for i in tqdm(range(ratings.iloc[:, 0].values.size)):
         if user_id > prev_user:
             relation_gender_user = np.zeros(len(genre_dict), dtype=float)
             num_ratings_user = 0
-            break
     # the same user
     movie_id = ratings.iloc[i, 1]
     relation_gender_user += genre_movie_df.loc[movie_id] * ratings.iloc[i, 2]
     num_ratings_user += 1
     # if its the last movie of this user
     if user_id < next_user:
-        relation_gender_user = relation_gender_user * 1 / (num_ratings_user)
+        relation_gender_user = relation_gender_user * (1 / (num_ratings_user))
         user_profiles = pd.concat(
-            [relation_gender_user, user_profiles], axis=0, ignore_index=False
+            [relation_gender_user, user_profiles], axis=1, ignore_index=True
         )
     # to end the loop
     first_user = False
     last_user = False
 
+user_profiles = user_profiles.transpose()
 user_profiles.to_csv("../ML_Dataset/ml-latest-small/user_profile.csv")
 
 ############ parte futura ########
