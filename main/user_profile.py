@@ -47,15 +47,31 @@ genre_movie_df = pd.DataFrame(genre_movie_matrix)
 user_profiles = pd.DataFrame(columns=genre_dict, dtype=float)
 
 num_ratings_user = 0
+first_user = False
+last_user = False
+
 for i in range(ratings.iloc[:, 0].values.size):
-    # actual,previous and next user to make the decisions
-    user_id = ratings.iloc[i, 0]
-    prev_user = ratings.iloc[i - 1, 0]
-    next_user = ratings.iloc[i + 1, 0]
-    # if actual is not the previous
-    if user_id > prev_user:
+    # actual,previous, next, first and last to make the decisions
+    if i == 0:
+        first_user = True
+    if i == (ratings.iloc[:, 0].values.size) - 1:
+        last_user = True
+    if first_user:
+        user_id = ratings.iloc[i, 0]
+        next_user = ratings.iloc[i + 1, 0]
         relation_gender_user = np.zeros(len(genre_dict), dtype=float)
         num_ratings_user = 0
+    elif last_user:
+        prev_user = ratings.iloc[i - 1, 0]
+        user_id = ratings.iloc[i, 0]
+        next_user = user_id + 1
+    else:
+        prev_user = ratings.iloc[i - 1, 0]
+        user_id = ratings.iloc[i, 0]
+        next_user = ratings.iloc[i + 1, 0]
+        if user_id > prev_user:
+            relation_gender_user = np.zeros(len(genre_dict), dtype=float)
+            num_ratings_user = 0
     # the same user
     movie_id = ratings.iloc[i, 1]
     relation_gender_user += genre_movie_df.loc[movie_id] * ratings.iloc[i, 2]
@@ -63,18 +79,20 @@ for i in range(ratings.iloc[:, 0].values.size):
     # if its the last movie of this user
     if user_id < next_user:
         relation_gender_user = relation_gender_user * 1 / (num_ratings_user)
-        pd.concat([user_profiles(relation_gender_user)], ignore_index=True)
+        user_profiles = pd.concat(
+            [user_profiles, relation_gender_user], ignore_index=True
+        )
+        print("concatenei: " + str(user_id))
+    # to end the loop
+    first_user = False
+    last_user = False
 
 user_profiles.to_csv("../ML_Dataset/ml-latest-small/user_profile.csv")
 
 ############ parte futura ########
-
 # Criar Matriz usuario-genero-relevance
 # Produto Usuario->MovieId->Genero->Relavance*Rating
-
 # Criar relacao usuario-tag(1128Dim)
 # Criar Matriz usuario-tag-relevance
 # Produto Usuario->MovieId->TagId->Relavance*Rating
-
 # Criar cluster de usuarios
-
