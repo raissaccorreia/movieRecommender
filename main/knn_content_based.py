@@ -3,18 +3,7 @@ import numpy as np
 from tqdm import tqdm
 import random
 import math
-
-# * 0 or 1 relation movie-gender each line a movie
-movie_vectors = pd.read_csv("../ML_Dataset/ml-latest-small/movie_profiles.csv")
-
-
-def loadDataset(filename, split, trainingSet=[], testSet=[]):
-    for i in tqdm(range(1, movie_vectors.iloc[:, 0].values.size)):
-        if random.random() < split:
-            trainingSet.append(movie_vectors.iloc[i, 1:].values)
-        else:
-            testSet.append(movie_vectors.iloc[i, 1:].values)
-    return trainingSet, testSet
+import operator
 
 
 def euclidean_dist(v1, v2):
@@ -31,14 +20,14 @@ def getNeighbors(trainingSet, testInstance, k):
     distances.sort(key=lambda tup: tup[1])
     neighbors = []
     for x in range(k):
-        neighbors.append(distances[x][1])
+        neighbors.append(distances[x])  #! prestar atencao na criacao dos neighbors
     return neighbors
 
 
 def getResponse(neighbors):
     classVotes = {}
     for x in range(len(neighbors)):
-        response = neighbors[x][1]
+        response = neighbors[x][0]  #! definir adequadamente a response
         if response in classVotes:
             classVotes[response] += 1
         else:
@@ -50,17 +39,26 @@ def getResponse(neighbors):
 def getAccuracy(testSet, predictions):
     correct = 0
     for x in range(len(testSet)):
-        if testSet[x][-1] is predictions[x]:
+        if x is predictions[x]:  #! como definir o correto para a acuracia
             correct += 1
     return (correct / float(len(testSet))) * 100.0
 
 
-trainingSet, testSet = loadDataset("movie_vectors", 0.70)
+trainingDf = pd.read_csv("../ML_Dataset/ml-latest-small/training_movies.csv")
+testDf = pd.read_csv("../ML_Dataset/ml-latest-small/test_movies.csv")
+trainingSet = []
+testSet = []
+
+for i in tqdm(range(1, trainingDf.iloc[:, 0].values.size)):
+    trainingSet.append(trainingDf.iloc[i, 1:].values)
+for i in tqdm(range(1, testDf.iloc[:, 0].values.size)):
+    testSet.append(testDf.iloc[i, 1:].values)
+
+
 k = 5
 predictions = []
 for i in tqdm(range(len(testSet))):
     neighbors = getNeighbors(trainingSet, testSet[i], k)
-    print(neighbors)
     response = getResponse(neighbors)
     predictions.append(response)
 accuracy = getAccuracy(testSet, predictions)
