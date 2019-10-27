@@ -41,5 +41,5 @@ def loadDataset(filename, split, trainingSet=[], testSet=[]):
 trainingSet, testSet = loadDataset(movie_vectors, 0.7)
 trainData = pd.DataFrame(data=trainingSet, columns=genre_dict, dtype=int)
 testData = pd.DataFrame(data=testSet, columns=genre_dict, dtype=int)
-trainData.to_csv("../ML_Dataset/ml-latest-small/training_movies.csv")
-testData.to_csv("../ML_Dataset/ml-latest-small/test_movies.csv")
+trainData.to_csv("../../ML_Dataset/ml-latest-small/training_movies.csv")
+testData.to_csv("../../ML_Dataset/ml-latest-small/test_movies.csv")

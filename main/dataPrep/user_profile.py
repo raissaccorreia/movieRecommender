@@ -3,9 +3,9 @@ import numpy as np
 from tqdm import tqdm
 
 # * userId,movieId,rating,timestamp
-ratings = pd.read_csv("../ML_Dataset/ml-latest-small/ratings.csv")
+ratings = pd.read_csv("../../ML_Dataset/ml-latest-small/ratings.csv")
 # * movieId,title,genres
-movie_genres = pd.read_csv("../ML_Dataset/ml-latest-small/movies.csv")
+movie_genres = pd.read_csv("../../ML_Dataset/ml-latest-small/movies.csv")
 
 genre_dict = {
     "Action": 0,
@@ -41,7 +41,7 @@ for i in tqdm(range(movie_genres.iloc[:, 2].values.size)):
         genre_movie_matrix[movie_genres.iloc[i, 0], index_y] = 1
 
 genre_movie_df = pd.DataFrame(genre_movie_matrix)
-genre_movie_df.to_csv("../ML_Dataset/ml-latest-small/movie_profiles.csv")
+genre_movie_df.to_csv("../../ML_Dataset/ml-latest-small/movie_profiles.csv")
 user_profiles = pd.DataFrame(columns=genre_dict, dtype=float)
 
 num_ratings_user = 0
@@ -85,4 +85,4 @@ for i in tqdm(range(ratings.iloc[:, 0].values.size)):
     last_user = False
 
 user_profiles = user_profiles.transpose()
-user_profiles.to_csv("../ML_Dataset/ml-latest-small/user_profile.csv")
+user_profiles.to_csv("../../ML_Dataset/ml-latest-small/user_profile.csv")

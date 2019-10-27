@@ -44,8 +44,8 @@ def getAccuracy(testSet, predictions):
     return (correct / float(len(testSet))) * 100.0
 
 
-trainingDf = pd.read_csv("../ML_Dataset/ml-latest-small/training_movies.csv")
-testDf = pd.read_csv("../ML_Dataset/ml-latest-small/test_movies.csv")
+trainingDf = pd.read_csv("../../ML_Dataset/ml-latest-small/training_movies.csv")
+testDf = pd.read_csv("../../ML_Dataset/ml-latest-small/test_movies.csv")
 trainingSet = []
 testSet = []
 

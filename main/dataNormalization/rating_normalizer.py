@@ -1,7 +1,7 @@
 import pandas as pd
 
 # get ratings original file
-ratings = pd.read_csv("../ML_Dataset/ml-latest/ratings.csv")
+ratings = pd.read_csv("../../ML_Dataset/ml-latest/ratings.csv")
 
 # getting rating column
 rating_list = ratings.iloc[:, 2]
@@ -18,4 +18,4 @@ df2 = pd.DataFrame(
     columns=["rating"],
 )
 df = df.join(df2)
-df.to_csv("../ML_Dataset/ml-latest/ratings_norm.csv")
+df.to_csv("../../ML_Dataset/ml-latest/ratings_norm.csv")
