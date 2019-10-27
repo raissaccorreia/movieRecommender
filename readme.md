@@ -22,7 +22,6 @@ MatPlotLib for our data visualization
 **pip3 install matplotlib**
 TQDM for ProgressBars in out jupyter notebook or terminal
 **pip3 install tqdm**
-pip3 install surprise
 Scikit-Learn for it's extremely efficient implementations of a few famous algorithms
 **pip3 install scikit-learn**
 Pandas for all our dataframes and CSV manipulation
@@ -37,7 +36,7 @@ Python: 3.7.3
 TensorFlow: 1.14.0
 Keras: 2.2.4
 MatplotLib: 3.1.1
-TQDM:
+TQDM: 4.36.1
 Scikit-Learn: 0.21.3
 Surprise: 0.1
 Scipy: 1.3.0
