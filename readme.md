@@ -1,36 +1,36 @@
 # Recommendation Systems: Ending CS BA Project
 ## Theorical Project in the PDF file:
-Latex project made on Overleaf, with it's pdf and images available in this repository:
-**Overleaf**: https://overleaf.com
-**PDF**: On the root folder or in
-**ArXiv**:
-**Images**: On the "Images" folder
+Latex project made on Overleaf, with it's pdf and images available in this repository:<br/>
+**Overleaf**: https://overleaf.com<br/>
+**PDF**: On the root folder or in<br/>
+**ArXiv**:<br/>
+**Images**: On the "Images" folder<br/>
 ## Practical Project:
 ### Installing the Venv:
-I called venv, and the sequence is in the requirements.txt, suposing the python venv is already installed in your device you will:
-Create the venv called "firstEnv":
-**python3 -m venv firstEnv**
-Activate it:
-**source firstEnv/bin/activate**
-Install jupyter notebook that we'll need to make the work presentable.
-**pip3 install jupyter**
-TensorFlow version 1, for all the machine learning stuff
-**pip3 install tensorflow**
-Keras to make AI models even easier to implement
-**pip3 install keras**
-MatPlotLib for our data visualization
-**pip3 install matplotlib**
-TQDM for ProgressBars in out jupyter notebook or terminal
-**pip3 install tqdm**
-Scikit-Learn for it's extremely efficient implementations of a few famous algorithms
-**pip3 install scikit-learn**
-Pandas for all our dataframes and CSV manipulation
-**python3 -m pip install --upgrade pandas**
-Surprise for some already done recommender algorithms to compare
-**pip3 install surprise**
-Numpy and Scipy for dealing with large arrays
-**pip3 install numpy**
-**pip3 install scipy**
+I called venv, and the sequence is in the requirements.txt, suposing the python venv is already installed in your device you will:<br/>
+Create the venv called "firstEnv":<br/>
+**python3 -m venv firstEnv**<br/>
+Activate it:<br/>
+**source firstEnv/bin/activate**<br/>
+Install jupyter notebook that we'll need to make the work presentable.<br/>
+**pip3 install jupyter**<br/>
+TensorFlow version 1, for all the machine learning stuff<br/>
+**pip3 install tensorflow**<br/>
+Keras to make AI models even easier to implement<br/>
+**pip3 install keras**<br/>
+MatPlotLib for our data visualization<br/>
+**pip3 install matplotlib**<br/>
+TQDM for ProgressBars in out jupyter notebook or terminal<br/>
+**pip3 install tqdm**<br/>
+Scikit-Learn for it's extremely efficient implementations of a few famous algorithms<br/>
+**pip3 install scikit-learn**<br/>
+Pandas for all our dataframes and CSV manipulation<br/>
+**python3 -m pip install --upgrade pandas**<br/>
+Surprise for some already done recommender algorithms to compare<br/>
+**pip3 install surprise**<br/>
+Numpy and Scipy for dealing with large arrays<br/>
+**pip3 install numpy**<br/>
+**pip3 install scipy**<br/>
 ### Versions that I used:
 Python: 3.7.3<br/>
 TensorFlow: 1.14.0<br/>
