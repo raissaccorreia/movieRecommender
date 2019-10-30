@@ -51,7 +51,7 @@ df_movie.plot(
     linewidth=1,
     label="movies",
 )
-plt.show()
+# plt.show()
 
 movies = pd.read_csv("../../ML_Dataset/ml-latest-small/movies.csv")
 
@@ -86,6 +86,35 @@ new_movies = new_movies.drop(
 )
 
 new_movies.to_csv("../../ML_Dataset/ml-latest-small/relevant_movies.csv")
+
+new_users = []
+for i in range(df_user.iloc[:, 0].values.size):
+    new_users.append(df_user.iloc[i, 0])
+
+ratings.drop(
+    labels="timestamp",
+    axis=1,
+    index=None,
+    columns=None,
+    level=None,
+    inplace=True,
+    errors="raise",
+)
+
+for i in tqdm(range(88580)):
+    user = ratings.iloc[i, 0]
+    if user not in new_users:
+        ratings.drop(
+            labels=None,
+            axis=0,
+            index=i,
+            columns=None,
+            level=None,
+            inplace=True,
+            errors="raise",
+        )
+
+ratings.to_csv("../../ML_Dataset/ml-latest-small/relevant_ratings.csv")
 
 # * https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html
 # * https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.truncate.html
