@@ -4,9 +4,6 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 import operator
 
-# * https://datatofish.com/plot-dataframe-pandas/
-# * https://python-graph-gallery.com/124-spaghetti-plot/
-
 # * userId,movieId,rating,timestamp
 ratings = pd.read_csv("../../ML_Dataset/ml-latest-small/ratings.csv")
 
@@ -54,15 +51,44 @@ df_movie.plot(
     linewidth=1,
     label="movies",
 )
-# plt.show()
+plt.show()
 
-# fazer a lista de filmes e usuarios que vao ficar
-# via merge/join criar novo ratings.csv e movies.csv
+movies = pd.read_csv("../../ML_Dataset/ml-latest-small/movies.csv")
+
+# * user with at least 128 ratings
+df_user = df_user.truncate(before=0, after=200, axis=0)
+# * movie with at least 11 ratings
+df_movie = df_movie.truncate(before=0, after=2000, axis=0)
+
+new_movies = pd.merge(
+    df_movie,
+    movies,
+    how="left",
+    on=None,
+    left_on="movies",
+    right_on="movieId",
+    left_index=False,
+    right_index=False,
+    sort=True,
+    suffixes=("_x", "_y"),
+    copy=True,
+    indicator=False,
+    validate=None,
+)
+new_movies = new_movies.drop(
+    labels="movies",
+    axis=1,
+    index=None,
+    columns=None,
+    level=None,
+    inplace=False,
+    errors="raise",
+)
+
+new_movies.to_csv("../../ML_Dataset/ml-latest-small/relevant_movies.csv")
 
 # * https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html
 # * https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.truncate.html
 # * https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html
-print(df_movie)
-print(df_user)
-movies = pd.read_csv("../../ML_Dataset/ml-latest-small/movies.csv")
-
+# * https://datatofish.com/plot-dataframe-pandas/
+# * https://python-graph-gallery.com/124-spaghetti-plot/
