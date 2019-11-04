@@ -37,12 +37,12 @@ genre_dict = {
 # * userId,movieId,rating,timestamp
 user_prof = pd.read_csv("../../ML_Dataset/ml-latest-small/user_profile.csv")
 # * it was taken off the NAN lines with dropna() and the column 19 from user_profile.py
-user_prof = np.array(user_prof)
+user_prof = np.array(user_prof.iloc[:, 1:])
 
 # * movieId,title,genres
 movie_prof = pd.read_csv("../../ML_Dataset/ml-latest-small/movie_profiles.csv")
 # * it was taken off the column 19 from user_profile.py
-movie_prof = np.array(movie_prof)
+movie_prof = np.array(movie_prof.iloc[:, 1:])
 
 pca = PCA(
     n_components="mle",
