@@ -4,7 +4,8 @@
 
 # plot
 # https://scikit-learn.org/stable/auto_examples/decomposition/plot_pca_iris.html#sphx-glr-auto-examples-decomposition-plot-pca-iris-py
-
+# Explicacao detalhada
+# https://jakevdp.github.io/PythonDataScienceHandbook/05.09-principal-component-analysis.html
 
 # PCA in movie_profiles and user_profiles
 import numpy as np
@@ -55,15 +56,19 @@ pca = PCA(
 )
 print("MOVIE PROFILES INFO\n")
 print("PCA FIT: ", pca.fit(movie_prof))
+print("Original shape:   ", movie_prof.shape)
 print("PCA FIT Tranform", pca.fit_transform(movie_prof))
 
 print("Expained Variance Ratio: ", pca.explained_variance_ratio_)
-relevance_features = pca.explained_variance_ratio_
+print(
+    pd.DataFrame(pca.components_, columns=genre_dict.keys(), index=list(range(0, 18)))
+)
+relevance_features = pca.explained_variance_ratio_.cumsum()
 index = np.arange(len(relevance_features))
-plt.bar(index, relevance_features, log=True)
+plt.plot(index, relevance_features, linewidth=2.0)
 plt.xlabel("Genre Features", fontsize=5)
 plt.ylabel("Explained Variance Ratio", fontsize=5)
-plt.xticks(index, genre_dict.keys(), fontsize=5, rotation=30)
+plt.xticks(index, list(range(0, 18)), fontsize=5, rotation=30)
 plt.title("Explained Variance Ratio for Movie Profiles")
 plt.show()
 
@@ -74,20 +79,25 @@ print("Get Precision: ", pca.get_precision())
 print("Score: ", pca.score(movie_prof, y=None))
 print("N Components:", pca.n_components)
 print("N Features:", pca.n_features_)
+print("Transformed Shape:", movie_prof.shape)
 
 print("\n")
 
 print("USER PROFILES INFO\n")
 print("PCA FIT: ", pca.fit(user_prof))
+print("Original shape:   ", movie_prof.shape)
 print("PCA FIT Tranform", pca.fit_transform(user_prof))
 
 print("Expained Variance Ratio: ", pca.explained_variance_ratio_)
-relevance_features = pca.explained_variance_ratio_
+print(
+    pd.DataFrame(pca.components_, columns=genre_dict.keys(), index=list(range(0, 18)))
+)
+relevance_features = pca.explained_variance_ratio_.cumsum()
 index = np.arange(len(relevance_features))
-plt.bar(index, relevance_features, log=True)
+plt.plot(index, relevance_features, linewidth=2.0)
 plt.xlabel("Genre Features", fontsize=5)
 plt.ylabel("Explained Variance Ratio", fontsize=5)
-plt.xticks(index, genre_dict.keys(), fontsize=5, rotation=30)
+plt.xticks(index, list(range(0, 18)), fontsize=5, rotation=30)
 plt.title("Explained Variance Ratio for User Profiles")
 plt.show()
 
@@ -98,3 +108,9 @@ print("Get Precision: ", pca.get_precision())
 print("Score: ", pca.score(user_prof, y=None))
 print("N Components:", pca.n_components)
 print("N Features:", pca.n_features_)
+print("Transformed Shape:", movie_prof.shape)
+
+# https://stackoverflow.com/questions/22984335/recovering-features-names-of-explained-variance-ratio-in-pca-with-sklearn
+
+# https://pypi.org/project/hdbscan/
+
