@@ -8,4 +8,5 @@ pip3 install tqdm
 pip3 install surprise
 pip3 install scikit-learn
 python3 -m pip install --upgrade pandas
+pip install hdbscan
 
