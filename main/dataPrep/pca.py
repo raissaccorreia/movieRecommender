@@ -58,6 +58,10 @@ print("MOVIE PROFILES INFO\n")
 print("PCA FIT: ", pca.fit(movie_prof))
 print("Original shape:   ", movie_prof.shape)
 print("PCA FIT Tranform", pca.fit_transform(movie_prof))
+transformed_movies = pd.DataFrame(data=pca.fit_transform(movie_prof))
+transformed_movies.to_csv(
+    index=False, path_or_buf="../../ML_Dataset/ml-latest-small/transformed_movies.csv"
+)
 
 print("Expained Variance Ratio: ", pca.explained_variance_ratio_)
 print(
@@ -85,8 +89,13 @@ print("\n")
 
 print("USER PROFILES INFO\n")
 print("PCA FIT: ", pca.fit(user_prof))
-print("Original shape:   ", movie_prof.shape)
+print("Original shape:   ", user_prof.shape)
 print("PCA FIT Tranform", pca.fit_transform(user_prof))
+
+transformed_users = pd.DataFrame(data=pca.fit_transform(user_prof))
+transformed_users.to_csv(
+    index=False, path_or_buf="../../ML_Dataset/ml-latest-small/transformed_users.csv"
+)
 
 print("Expained Variance Ratio: ", pca.explained_variance_ratio_)
 print(

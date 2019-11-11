@@ -1,0 +1,14 @@
+HDBSCAN(algorithm='best', allow_single_cluster=False, alpha=1.0,
+        approx_min_span_tree=True, cluster_selection_method='leaf',
+        core_dist_n_jobs=4, gen_min_span_tree=False, leaf_size=40,
+        match_reference_implementation=False, memory=Memory(location=None),
+        metric='euclidean', min_cluster_size=5, min_samples=5, p=None,
+        prediction_data=False)
+Outline Rate in Movies: 0.2645
+HDBSCAN(algorithm='best', allow_single_cluster=False, alpha=1.0,
+        approx_min_span_tree=True, cluster_selection_method='leaf',
+        core_dist_n_jobs=4, gen_min_span_tree=False, leaf_size=40,
+        match_reference_implementation=False, memory=Memory(location=None),
+        metric='correlation', min_cluster_size=2, min_samples=2, p=None,
+        prediction_data=False)
+Outline Rate in Users: 0.733446519524618
