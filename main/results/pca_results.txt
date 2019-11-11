@@ -244,7 +244,7 @@ USER PROFILES INFO
 
 PCA FIT:  PCA(copy=True, iterated_power='auto', n_components='mle', random_state=None,
     svd_solver='auto', tol=0.0, whiten=False)
-Original shape:    (2000, 19)
+Original shape:    (589, 19)
 PCA FIT Tranform [[ 4.47957942e-01 -1.51427393e-01 -1.39227766e-01 ...  3.94993418e-02
   -7.57848981e-03  1.75882414e-02]
  [ 2.18427886e-01 -6.43419762e-01 -2.48022490e-01 ...  2.32296649e-02
