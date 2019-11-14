@@ -1,0 +1,21 @@
+Best Score
+ {'rmse': 0.8935402140074163, 'mae': 0.6917559185533332}
+Best Params
+ {'rmse': {'n_epochs': 10, 'lr_all': 0.005, 'reg_all': 0.4}, 'mae': {'n_epochs': 10, 'lr_all': 0.005, 'reg_all': 0.4}}
+Best Estimators
+ {'rmse': <surprise.prediction_algorithms.matrix_factorization.SVD object at 0x7fb603ca4d30>, 'mae': <surprise.prediction_algorithms.matrix_factorization.SVD object at 0x7fb603ca4c18>}
+Best Index
+ {'rmse': 6, 'mae': 6}
+Results Dicts: 
+
+   split0_test_rmse  split0_train_rmse  ...  param_lr_all  param_reg_all
+0          0.928031           0.907795  ...         0.002            0.4
+1          0.933913           0.915514  ...         0.002            0.6
+2          0.906740           0.876380  ...         0.005            0.4
+3          0.914405           0.887987  ...         0.005            0.6
+4          0.911420           0.883483  ...         0.002            0.4
+5          0.918395           0.894183  ...         0.002            0.6
+6          0.895419           0.856594  ...         0.005            0.4
+7          0.903877           0.870113  ...         0.005            0.6
+
+[8 rows x 30 columns]

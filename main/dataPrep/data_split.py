@@ -7,9 +7,9 @@ movies = pd.read_csv("../../ML_Dataset/ml-latest-small/transformed_movies.csv")
 users = pd.read_csv("../../ML_Dataset/ml-latest-small/transformed_users.csv")
 
 movies_test = movies.sample(frac=0.3)
-movies_train = movies.sample(frac=0.7)
+movies_train = movies.drop(movies_test.index)
 users_test = users.sample(frac=0.3)
-users_train = users.sample(frac=0.7)
+users_train = users.drop(users_test.index)
 
 print("Train Shape and Test Shape from Movies: ", movies_train.shape, movies_test.shape)
 print("Train Shape and Test Shape from Users: ", users_train.shape, users_test.shape)
