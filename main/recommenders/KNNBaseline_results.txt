@@ -1,0 +1,45 @@
+Estimating biases using als...
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+RMSE: 0.8851
+MAE:  0.6735
+MSE: 0.7833
+FCP:  0.6744
+Precision:  0.8185792349726788
+Recall:  0.27647798690214187
+Estimating biases using als...
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+RMSE: 0.8684
+MAE:  0.6626
+MSE: 0.7541
+FCP:  0.6806
+Precision:  0.836065573770493
+Recall:  0.2711692575462154
+Estimating biases using als...
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+RMSE: 0.8625
+MAE:  0.6602
+MSE: 0.7438
+FCP:  0.6698
+Precision:  0.8352764094143416
+Recall:  0.27209239779673466
+Estimating biases using als...
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+RMSE: 0.8820
+MAE:  0.6731
+MSE: 0.7780
+FCP:  0.6648
+Precision:  0.8139573070607566
+Recall:  0.26492154572910404
+Estimating biases using als...
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+RMSE: 0.8719
+MAE:  0.6691
+MSE: 0.7603
+FCP:  0.6814
+Precision:  0.8168035030104008
+Recall:  0.26346044213190506

@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from collections import defaultdict
-from surprise import NMF
+from surprise import KNNWithMeans
 from surprise import Dataset
 from surprise import Reader
 from surprise import accuracy
@@ -74,8 +74,8 @@ trainset, testset = train_test_split(data, test_size=0.25)
 # * define a cross-validation iterator
 kf = KFold(n_splits=5)
 
-# * Choosing NMF as algorithm
-algo = NMF()
+# * Choosing KNN With Means as algorithm
+algo = KNNWithMeans()
 
 # * Train the algorithm on the trainset, and predict ratings for the testset
 for trainset, testset in kf.split(data):
@@ -90,5 +90,4 @@ for trainset, testset in kf.split(data):
 
 df = pd.DataFrame(predictions, columns=["uid", "iid", "rui", "est", "details"])
 df["err"] = abs(df.est - df.rui)
-df.to_csv("predictions_NMF.csv")
-
+df.to_csv("predictions_KNNMeans.csv")

@@ -72,7 +72,12 @@ data = Dataset.load_from_file(
 trainset, testset = train_test_split(data, test_size=0.25)
 
 # * create the param grid to checkout the best way to select the params for this algorithm
-param_grid = {"n_epochs": [5, 10], "lr_all": [0.002, 0.005], "reg_all": [0.4, 0.6]}
+param_grid = {
+    "biased": [True, False],
+    "n_factors": [50, 100, 200],
+    "lr_all": [0.002, 0.005],
+    "reg_all": [0.4, 0.6],
+}
 gs = GridSearchCV(
     SVD, param_grid, measures=["rmse", "mae"], cv=3, return_train_measures=True
 )
@@ -126,4 +131,6 @@ df.to_csv("predictions_svd.csv")
 
 # https://bmanohar16.github.io/blog/recsys-evaluation-in-surprise
 # https://towardsdatascience.com/building-and-testing-recommender-systems-with-surprise-step-by-step-d4ba702ef80b
+
+# https://surprise.readthedocs.io/en/stable/prediction_algorithms.html#similarity-measures-configuration
 

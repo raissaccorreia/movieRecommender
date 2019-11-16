@@ -1,0 +1,40 @@
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+RMSE: 0.9013
+MAE:  0.6827
+MSE: 0.8123
+FCP:  0.6469
+Precision:  0.8236842105263169
+Recall:  0.2928648424263283
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+RMSE: 0.8983
+MAE:  0.6819
+MSE: 0.8069
+FCP:  0.6554
+Precision:  0.8370005473453762
+Recall:  0.28114731756025785
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+RMSE: 0.8882
+MAE:  0.6734
+MSE: 0.7889
+FCP:  0.6511
+Precision:  0.8260416666666681
+Recall:  0.2771353994230258
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+RMSE: 0.8922
+MAE:  0.6771
+MSE: 0.7960
+FCP:  0.6617
+Precision:  0.837759562841532
+Recall:  0.2828973003051379
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+RMSE: 0.9000
+MAE:  0.6832
+MSE: 0.8100
+FCP:  0.6378
+Precision:  0.8239583333333349
+Recall:  0.286656282968948

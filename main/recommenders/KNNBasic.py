@@ -72,7 +72,14 @@ data = Dataset.load_from_file(
 trainset, testset = train_test_split(data, test_size=0.25)
 
 # * create the param grid to checkout the best way to select the params for this algorithm
-param_grid = {"n_epochs": [5, 10], "lr_all": [0.002, 0.005], "reg_all": [0.4, 0.6]}
+param_grid = {
+    "k": [25, 40, 55],
+    "sim_options": {
+        "name": ["msd", "cosine"],
+        "min_support": [1, 5],
+        "user_based": [False, True],
+    },
+}
 gs = GridSearchCV(
     KNNBasic, param_grid, measures=["rmse", "mae"], cv=3, return_train_measures=True
 )
