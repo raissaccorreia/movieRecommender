@@ -105,10 +105,14 @@ for trainset, testset in kf.split(data):
     print("Precision: ", sum(prec for prec in precisions.values()) / len(precisions))
     print("Recall: ", sum(rec for rec in recalls.values()) / len(recalls))
 
-top_n = get_top_n(predictions, n=10)
+df = pd.DataFrame(predictions, columns=["uid", "iid", "rui", "est", "details"])
+df["err"] = abs(df.est - df.rui)
+df.to_csv("predictions_svd.csv")
+
+# top_n = get_top_n(predictions, n=10)
 # * Print the recommended items for each user
-for uid, user_ratings in top_n.items():
-    print(uid, [iid for (iid, _) in user_ratings])
+# for uid, user_ratings in top_n.items():
+#    print(uid, [iid for (iid, _) in user_ratings])
 
 
 # CONTENT BASED LINKS:

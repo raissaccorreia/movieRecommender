@@ -1,0 +1,51 @@
+Best Score
+ {'rmse': 0.8937850806601371, 'mae': 0.6923640097723229}
+Best Params
+ {'rmse': {'n_epochs': 10, 'lr_all': 0.005, 'reg_all': 0.4}, 'mae': {'n_epochs': 10, 'lr_all': 0.005, 'reg_all': 0.4}}
+Best Estimators
+ {'rmse': <surprise.prediction_algorithms.matrix_factorization.SVD object at 0x7f86e1d32518>, 'mae': <surprise.prediction_algorithms.matrix_factorization.SVD object at 0x7f86e1d325c0>}
+Best Index
+ {'rmse': 6, 'mae': 6}
+Results Dicts: 
+
+   split0_test_rmse  split0_train_rmse  ...  param_lr_all  param_reg_all
+0          0.930784           0.906524  ...         0.002            0.4
+1          0.935984           0.914086  ...         0.002            0.6
+2          0.909646           0.874885  ...         0.005            0.4
+3          0.917222           0.886519  ...         0.005            0.6
+4          0.914110           0.882097  ...         0.002            0.4
+5          0.921149           0.892695  ...         0.002            0.6
+6          0.898489           0.855049  ...         0.005            0.4
+7          0.906800           0.868766  ...         0.005            0.6
+
+[8 rows x 30 columns]
+RMSE: 0.8791
+MAE:  0.6764
+MSE: 0.7728
+FCP:  0.6700
+Precision:  0.8330054644808756
+Recall:  0.2608472171662098
+RMSE: 0.8776
+MAE:  0.6753
+MSE: 0.7702
+FCP:  0.6564
+Precision:  0.8410087719298257
+Recall:  0.24053294232078992
+RMSE: 0.8736
+MAE:  0.6713
+MSE: 0.7632
+FCP:  0.6587
+Precision:  0.8794745484400667
+Recall:  0.2657707711219491
+RMSE: 0.8599
+MAE:  0.6618
+MSE: 0.7395
+FCP:  0.6621
+Precision:  0.8546721311475424
+Recall:  0.2566958207677495
+RMSE: 0.8721
+MAE:  0.6672
+MSE: 0.7605
+FCP:  0.6588
+Precision:  0.8609562841530067
+Recall:  0.2569573201788141
