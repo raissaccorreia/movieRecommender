@@ -1,0 +1,109 @@
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+Best Score
+ {'rmse': 0.9583475419062722, 'mae': 0.7350685112562658}
+Best Params
+ {'rmse': {'n_epochs': 5, 'lr_all': 0.002, 'reg_all': 0.4}, 'mae': {'n_epochs': 5, 'lr_all': 0.002, 'reg_all': 0.4}}
+Best Estimators
+ {'rmse': <surprise.prediction_algorithms.knns.KNNBasic object at 0x7f329cc2a550>, 'mae': <surprise.prediction_algorithms.knns.KNNBasic object at 0x7f329cc2a5f8>}
+Best Index
+ {'rmse': 0, 'mae': 0}
+Results Dicts: 
+
+   split0_test_rmse  split0_train_rmse  ...  param_lr_all  param_reg_all
+0          0.960301           0.695846  ...         0.002            0.4
+1          0.960301           0.695846  ...         0.002            0.6
+2          0.960301           0.695846  ...         0.005            0.4
+3          0.960301           0.695846  ...         0.005            0.6
+4          0.960301           0.695846  ...         0.002            0.4
+5          0.960301           0.695846  ...         0.002            0.6
+6          0.960301           0.695846  ...         0.005            0.4
+7          0.960301           0.695846  ...         0.005            0.6
+
+[8 rows x 30 columns]
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+RMSE: 0.9536
+MAE:  0.7313
+MSE: 0.9093
+FCP:  0.6712
+Precision:  0.7562671045429676
+Recall:  0.2991078486597495
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+RMSE: 0.9515
+MAE:  0.7254
+MSE: 0.9054
+FCP:  0.6757
+Precision:  0.7652185792349734
+Recall:  0.30275510803040734
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+RMSE: 0.9450
+MAE:  0.7248
+MSE: 0.8930
+FCP:  0.6703
+Precision:  0.7957377049180336
+Recall:  0.28471873101628076
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+RMSE: 0.9349
+MAE:  0.7191
+MSE: 0.8741
+FCP:  0.6784
+Precision:  0.7996721311475419
+Recall:  0.28769585399699915
+Computing the msd similarity matrix...
+Done computing similarity matrix.
+RMSE: 0.9492
+MAE:  0.7284
+MSE: 0.9010
+FCP:  0.6809
+Precision:  0.7844553913519441
+Recall:  0.29457133279722053

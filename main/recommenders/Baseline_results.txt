@@ -1,0 +1,35 @@
+Estimating biases using als...
+RMSE: 0.8731
+MAE:  0.6720
+MSE: 0.7623
+FCP:  0.6837
+Precision:  0.8768032786885256
+Recall:  0.22207904574004916
+Estimating biases using als...
+RMSE: 0.8712
+MAE:  0.6697
+MSE: 0.7591
+FCP:  0.6772
+Precision:  0.8772950819672141
+Recall:  0.22973044367868478
+Estimating biases using als...
+RMSE: 0.8713
+MAE:  0.6707
+MSE: 0.7592
+FCP:  0.6720
+Precision:  0.8659289617486351
+Recall:  0.22737102588216626
+Estimating biases using als...
+RMSE: 0.8718
+MAE:  0.6767
+MSE: 0.7601
+FCP:  0.6738
+Precision:  0.8900109469074994
+Recall:  0.2351213382698622
+Estimating biases using als...
+RMSE: 0.8751
+MAE:  0.6750
+MSE: 0.7657
+FCP:  0.6737
+Precision:  0.8587848932676531
+Recall:  0.2317364066060379
